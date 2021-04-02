@@ -67,8 +67,8 @@ echo $OUTPUT->header();
 // Get note record.
 $result = $DB->get_record('notetaker_notes', ['notetakerid' => $notetaker->id, 'id' => $noteid]);
 $messagetext = $result->notefield;
-$messagetext = format_text($messagetext);
 $messagetext = file_rewrite_pluginfile_urls($messagetext, 'pluginfile.php', $context->id, 'mod_notetaker', 'notefield', $result->id);
+$messagetext = format_text($messagetext);
 
 
 $result->noteowner = "";
